@@ -1,4 +1,4 @@
-package ${entityPackage};
+package ${dtoPackage};
 
 <#list table.fields as field>
 <#if field.propertyType?index_of("BigDecimal")!=-1>

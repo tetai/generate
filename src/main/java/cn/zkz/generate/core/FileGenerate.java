@@ -36,6 +36,10 @@ public class FileGenerate {
         data.put("servicePackage", packagePathConfig.getServicePath());
         data.put("serviceImplPackage", packagePathConfig.getServiceImplPath());
         data.put("mapperPackage",packagePathConfig.getMapperPath());
+        data.put("dtoPackage",packagePathConfig.getDtoPath());
+        data.put("doPackage",packagePathConfig.getDoPath());
+        data.put("domainServicePackage",packagePathConfig.getDomainServicePath());
+
         //移除表前缀，表名之间的下划线，得到实体类型
         String entity = CommonUtils.getNoUnderlineStr(CommonUtils.removePrefix(tableInfo.getName().toLowerCase(), new String[]{globalConfig.getDeletePreSuffix()}));
         data.put("entity", StringUtils.capitalize(entity));//实体名称
@@ -103,7 +107,7 @@ public class FileGenerate {
 
         }else if(CodeType.SERVICE.getVal().equals(codeType)){
             //包名 package.path
-            path.append(packagePathConfig.getAppPath()).append("/").append(javaPath).append(packagePathConfig.getServicePath()).append("/");
+            path.append(packagePathConfig.getClientPath()).append("/").append(javaPath).append(packagePathConfig.getServicePath()).append("/");
             //文件名
             path.append(entityName).append("Service").append(".java");
         }else if(CodeType.SERVICEIMPL.getVal().equals(codeType)){

@@ -1,7 +1,5 @@
 package ${servicePackage};
 
-import ${entityPackage}.${entity};
-import com.github.pagehelper.PageInfo;
 
 
 /**

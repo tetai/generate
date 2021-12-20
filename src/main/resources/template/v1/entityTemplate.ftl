@@ -8,15 +8,9 @@ package ${entityPackage};
 <#assign importDate=true/>
 </#if>
 </#list>
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import lombok.Data;
-import lombok.experimental.Accessors;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import lombok.Data;
+
 <#if importDate?exists>
 import java.util.Date;
 </#if>

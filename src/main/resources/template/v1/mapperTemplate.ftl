@@ -2,7 +2,7 @@ package ${mapperPackage};
 
 import org.apache.ibatis.annotations.Mapper;
 import com.wakedata.common.mybatis.plus.mapper.CommonMapper;
-import ${entityPackage}.${entity};
+import ${doPackage}.${entity}DO;
 
 /**
  * @Description: ${entity} Mapper

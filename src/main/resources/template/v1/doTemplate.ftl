@@ -1,4 +1,4 @@
-package ${entityPackage};
+package ${doPackage};
 
 <#list table.fields as field>
 <#if field.propertyType?index_of("BigDecimal")!=-1>
@@ -8,15 +8,13 @@ package ${entityPackage};
 <#assign importDate=true/>
 </#if>
 </#list>
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import lombok.Data;
-import lombok.experimental.Accessors;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import lombok.Data;
+
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.IdType;
 <#if importDate?exists>
 import java.util.Date;
 </#if>
@@ -28,24 +26,17 @@ import java.math.BigDecimal;
  * 表名：${table.name}
 */
 @Data
-@Table(name = "${table.name}")
+@TableName("${table.name}")
 public class ${entity}DO {
 <#-- 循环属性名称 -->
 <#list table.fields as field>
-    <#if field.comment??>
-    /**
-     * <#if field.comment!="">${field.comment}<#else >主键</#if>
-     */
-    </#if>
     <#if field.keyIdentityFlag>
-    @Id
-    @Column(name = "`${field.name}`")
+    @TableField("${field.name}")
     @TableId(type = IdType.AUTO)
     /**
      * ${field.comment}
      */
     <#else>
-    @Column(name = "`${field.name}`")
     /**
      * ${field.comment}
      */
