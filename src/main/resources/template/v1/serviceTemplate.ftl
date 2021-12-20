@@ -5,33 +5,11 @@ import com.github.pagehelper.PageInfo;
 
 
 /**
- * @Description: 描述
+ * @Description:
  * @Author: ${author}
  * @Date: ${date}
  **/
 public interface ${entity}Service {
 
-     /**
-      * 查询列表
-      *
-      * @param
-      * @return
-      */
-     PageInfo<${entity}> list(Integer pageSize, Integer pageNum);
 
-     /**
-      * 查询详情
-      *
-      * @param
-      * @return
-      */
-     ${entity} detail(${tbKeyType} ${tbKey});
-
-     /**
-      * 保存
-      *
-      * @param
-      * @return
-      */
-     Boolean save(${entity} ${entity?uncap_first});
 }

@@ -82,38 +82,38 @@ public class FileGenerate {
     public static String getCodePath(Integer codeType, String entityName) {
         PackagePathConfig packagePathConfig = PackagePathConfig.newInstance();
         StringBuilder path = new StringBuilder().append(packagePathConfig.getBasePath());
-//        String javaPath = "src\\main\\java\\";
-        String javaPath = "test\\java\\";
+        String javaPath = "src\\main\\java\\";
+//        String javaPath = "test\\java\\";
         if(CodeType.DO.getVal().equals(codeType)) {
             //包名 package.path
-            path.append(javaPath).append(packagePathConfig.getDoPath()).append("/").append(entityName).append("DO").append(".java");
+            path.append(packagePathConfig.getInfraPath()).append("/").append(javaPath).append(packagePathConfig.getDoPath()).append("/").append(entityName).append("DO").append(".java");
         }else if(CodeType.ENTITY.getVal().equals(codeType)){
             //包名 package.path
-            path.append(javaPath).append(packagePathConfig.getEntityPath()).append("/").append(entityName).append("Entity").append(".java");
+            path.append(packagePathConfig.getDomainPath()).append("/").append(javaPath).append(packagePathConfig.getEntityPath()).append("/").append(entityName).append("Entity").append(".java");
         }else if(CodeType.DTO.getVal().equals(codeType)){
             //包名 package.path
-            path.append(javaPath).append(packagePathConfig.getDtoPath()).append("/").append(entityName).append("DTO").append(".java");
+            path.append(packagePathConfig.getClientPath()).append("/").append(javaPath).append(packagePathConfig.getDtoPath()).append("/").append(entityName).append("DTO").append(".java");
         }else if(CodeType.MAPPER.getVal().equals(codeType)){
             //包名 package.path
-            path.append(javaPath).append(packagePathConfig.getMapperPath()).append("/").append(entityName).append("Mapper").append(".java");
+            path.append(packagePathConfig.getInfraPath()).append("/").append(javaPath).append(packagePathConfig.getMapperPath()).append("/").append(entityName).append("Mapper").append(".java");
         }else if(CodeType.XML.getVal().equals(codeType)){
             //包名 package.path
-            path.append("resources\\").append(packagePathConfig.getXmlPath()).append("/")
+            path.append(packagePathConfig.getInfraPath()).append("/").append("src\\main\\resources\\").append(packagePathConfig.getXmlPath()).append("/")
                     .append(entityName).append("Mapper").append(".xml");
 
         }else if(CodeType.SERVICE.getVal().equals(codeType)){
             //包名 package.path
-            path.append(javaPath).append(packagePathConfig.getServicePath()).append("/");
+            path.append(packagePathConfig.getAppPath()).append("/").append(javaPath).append(packagePathConfig.getServicePath()).append("/");
             //文件名
             path.append(entityName).append("Service").append(".java");
         }else if(CodeType.SERVICEIMPL.getVal().equals(codeType)){
             //包名 package.path
-            path.append(javaPath).append(packagePathConfig.getServiceImplPath()).append("/");
+            path.append(packagePathConfig.getAppPath()).append("/").append(javaPath).append(packagePathConfig.getServiceImplPath()).append("/");
             //文件名
             path.append(entityName).append("ServiceImpl").append(".java");
         }else if(CodeType.CONTORL.getVal().equals(codeType)){
             //包名 package.path
-            path.append(javaPath).append(packagePathConfig.getControlPath()).append("/");
+            path.append(packagePathConfig.getAdapterPath()).append("/").append(javaPath).append(packagePathConfig.getControlPath()).append("/");
             //文件名
             path.append(entityName).append("Controller").append(".java");
         }else{

@@ -21,6 +21,8 @@ public class TemplateUtils {
         add(new Template("mapperXmlTemplate.ftl", CodeType.XML.getVal()));
         add(new Template("serviceImplTemplate.ftl", CodeType.SERVICEIMPL.getVal()));
         add(new Template("serviceTemplate.ftl", CodeType.SERVICE.getVal()));
+        add(new Template("dtoTemplate.ftl", CodeType.DTO.getVal()));
+        add(new Template("doTemplate.ftl", CodeType.DO.getVal()));
 
 
     }};

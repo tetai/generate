@@ -21,8 +21,13 @@ public class PackagePathConfig {
     public static PackagePathConfig newInstance() {
         return packagePathConfig;
     }
-
     private String basePath;
+
+    private String adapterPath;
+    private String appPath;
+    private String clientPath;
+    private String domainPath;
+    private String infraPath;
 
     private String doPath;
 
@@ -47,6 +52,14 @@ public class PackagePathConfig {
         String basePath = "";
 
         condif.basePath = properties.getProperty("path.basepath");
+
+        condif.adapterPath = properties.getProperty("path.adapterModulePath");
+        condif.appPath = properties.getProperty("path.appModulePath");
+        condif.clientPath = properties.getProperty("path.clientModulePath");
+        condif.domainPath = properties.getProperty("path.domainModulePath");
+        condif.infraPath = properties.getProperty("path.infrastructureModulePath");
+
+
         condif.doPath = basePath + properties.getProperty("path.doPath");
         condif.entityPath = basePath + properties.getProperty("path.entityPath");
         condif.dtoPath = basePath + properties.getProperty("path.dtoPath");

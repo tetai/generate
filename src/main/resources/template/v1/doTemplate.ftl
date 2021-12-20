@@ -24,15 +24,32 @@ import java.util.Date;
 import java.math.BigDecimal;
 </#if>
 
-
+/**
+ * 表名：${table.name}
+*/
 @Data
-public class ${entity}Entity {
+@Table(name = "${table.name}")
+public class ${entity}DO {
 <#-- 循环属性名称 -->
 <#list table.fields as field>
-
+    <#if field.comment??>
+    /**
+     * <#if field.comment!="">${field.comment}<#else >主键</#if>
+     */
+    </#if>
+    <#if field.keyIdentityFlag>
+    @Id
+    @Column(name = "`${field.name}`")
+    @GeneratedValue(generator = "JDBC")
     /**
      * ${field.comment}
      */
+    <#else>
+    @Column(name = "`${field.name}`")
+    /**
+     * ${field.comment}
+     */
+    </#if>
     private ${field.propertyType} ${field.propertyName};
 
 </#list>

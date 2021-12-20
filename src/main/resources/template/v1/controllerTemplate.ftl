@@ -17,7 +17,6 @@ import java.util.HashMap;
  * @Date: ${date}
  **/
 @Slf4j
-@CrossOrigin
 @RestController
 @RequestMapping(value="/${entity?uncap_first}")
 public class ${entity}Controller {

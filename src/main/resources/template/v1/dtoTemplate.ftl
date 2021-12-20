@@ -26,13 +26,11 @@ import java.math.BigDecimal;
 
 
 @Data
-public class ${entity}Entity {
+public class ${entity}DTO {
 <#-- 循环属性名称 -->
 <#list table.fields as field>
 
-    /**
-     * ${field.comment}
-     */
+    @ApiModelProperty("${field.comment}")
     private ${field.propertyType} ${field.propertyName};
 
 </#list>
