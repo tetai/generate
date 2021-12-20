@@ -35,9 +35,6 @@ public class CodeGenerate {
         PackagePathConfig.buildData(properties);
         GlobalConfig.bulidData(properties);
 
-        System.out.println(DatabaseConfig.newInstance().toString());
-        System.out.println(PackagePathConfig.newInstance().toString());
-        System.out.println(GlobalConfig.newInstance().toString());
     }
 
     /**

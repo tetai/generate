@@ -40,7 +40,7 @@ public class ${entity}DO {
     <#if field.keyIdentityFlag>
     @Id
     @Column(name = "`${field.name}`")
-    @GeneratedValue(generator = "JDBC")
+    @TableId(type = IdType.AUTO)
     /**
      * ${field.comment}
      */
