@@ -7,26 +7,34 @@ package cn.zkz.generate.model;
  */
 public enum CodeType {
 
-    ENTITY(1, "实体"),
-    DO(2, "do"),
-    DTO(3, "dto"),
-    CONTORL(4, "control"),
-    SERVICE(5, "service"),
-    SERVICEIMPL(6, "serviceimpl"),
-    XML(7, "xml"),
-    MAPPER(8, "mapper"),
+    ENTITY("entity", "实体"),
+    DO("do", "do"),
+    DTO("dto", "dto"),
+    CONTORL("control", "control"),
+    SERVICE("service", "service"),
+    SERVICEIMPL("serviceimpl", "serviceimpl"),
+    XML("xml", "xml"),
+    MAPPER("mapper", "mapper"),
+    PAGEQUERY("pageQuery", "pageQuery"),
+    PAGEQUERYHANDLER("pageQueryHandler", "pageQueryHandler"),
+    DOMAIN("domain", "domain"),
+    GATEWAY("gateway", "gateway"),
+    GATEWAYIMPL("gatewayImpl", "gatewayImpl"),
+    DO2DTO("DO2DTO", "DO2DTO"),
+    DO2ENTITY("DO2ENTITY", "DO2ENTITY"),
+    ENTITY2DTO("ENTITY2DTO", "ENTITY2DTO"),
 
     ;
 
-    private Integer val;
+    private String val;
     private String desc;
 
-    CodeType(int val, String desc) {
+    CodeType(String val, String desc) {
         this.val = val;
         this.desc = desc;
     }
 
-    public Integer getVal() {
+    public String getVal() {
         return this.val;
     }
 }

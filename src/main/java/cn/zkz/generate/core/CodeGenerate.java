@@ -5,7 +5,6 @@ import cn.zkz.generate.config.DatabaseConfig;
 import cn.zkz.generate.config.GlobalConfig;
 import cn.zkz.generate.config.PackagePathConfig;
 import cn.zkz.generate.database.InitMetaData;
-import cn.zkz.generate.model.CodeType;
 import cn.zkz.generate.model.TableField;
 import cn.zkz.generate.model.TableInfo;
 import cn.zkz.generate.utils.TemplateUtils;
@@ -34,6 +33,7 @@ public class CodeGenerate {
         DatabaseConfig.buildData(properties);
         PackagePathConfig.buildData(properties);
         GlobalConfig.bulidData(properties);
+        TemplateUtils.handler(properties);
 
     }
 
@@ -59,20 +59,16 @@ public class CodeGenerate {
             tableInfo.setName(str);
             tableInfo.setFields(tableField);
 
-            Map<String, Object> data = FileGenerate.handleData(tableInfo);
+            Map<String, Object> data = TemplateUtils.handleData(tableInfo);
 
             for (TemplateUtils.Template template : TemplateUtils.templates) {
-                FileGenerate.generate(data, template.getTemplateName(), template.getType());
+                if (template.getIsGenerate()) {
+                    FileGenerate.generate(data, template);
+                }
             }
-
-
         }
 
-
-
     }
-
-
 }
 
 

@@ -1,13 +1,13 @@
-package ${mapperPackage};
+package ${mapperPath};
 
 import org.apache.ibatis.annotations.Mapper;
 import com.wakedata.common.mybatis.plus.mapper.CommonMapper;
-import ${doPackage}.${entity}DO;
+import ${doPath}.${entity}DO;
 
 /**
- * @Description: ${entity} Mapper
+ * @description:
  * @author: ${author}
- * @Date: ${date}
+ * @date: ${date}
  */
 @Mapper
 public interface ${entity}Mapper extends CommonMapper<${entity}DO> {

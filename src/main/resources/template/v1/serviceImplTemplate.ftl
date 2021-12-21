@@ -1,18 +1,18 @@
-package ${serviceImplPackage};
+package ${serviceImplPath};
 
 
 
-import ${servicePackage}.${entity}Service;
+import ${servicePath}.${entity}Service;
 import org.springframework.stereotype.Service;
 
 
 import java.util.List;
 
 /**
- * @Description:
- * @Author: ${author}
- * @Date: ${date}
- **/
+ * @description:
+ * @author: ${author}
+ * @date: ${date}
+ */
 @Service
 public class ${entity}ServiceImpl implements ${entity}Service {
 

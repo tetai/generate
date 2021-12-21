@@ -1,4 +1,4 @@
-package ${dtoPackage};
+package ${dtoPath};
 
 <#list table.fields as field>
 <#if field.propertyType?index_of("BigDecimal")!=-1>
@@ -24,7 +24,11 @@ import java.util.Date;
 import java.math.BigDecimal;
 </#if>
 
-
+/**
+ * @description:
+ * @author: ${author}
+ * @date: ${date}
+ */
 @Data
 public class ${entity}DTO {
 <#-- 循环属性名称 -->

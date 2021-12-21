@@ -1,4 +1,4 @@
-package ${doPackage};
+package ${doPath};
 
 <#list table.fields as field>
 <#if field.propertyType?index_of("BigDecimal")!=-1>
@@ -23,8 +23,10 @@ import java.math.BigDecimal;
 </#if>
 
 /**
- * 表名：${table.name}
-*/
+ * @description: 表名：${table.name}
+ * @author: ${author}
+ * @date: ${date}
+ */
 @Data
 @TableName("${table.name}")
 public class ${entity}DO {

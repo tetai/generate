@@ -1,12 +1,12 @@
-package ${servicePackage};
+package ${servicePath};
 
 
 
 /**
- * @Description:
- * @Author: ${author}
- * @Date: ${date}
- **/
+ * @description:
+ * @author: ${author}
+ * @date: ${date}
+ */
 public interface ${entity}Service {
 
 
