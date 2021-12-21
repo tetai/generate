@@ -8,15 +8,10 @@ package ${dtoPath};
 <#assign importDate=true/>
 </#if>
 </#list>
-import io.swagger.annotations.ApiModel;
+
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-import lombok.experimental.Accessors;
-
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import java.io.Serializable;
 <#if importDate?exists>
 import java.util.Date;
 </#if>
@@ -30,12 +25,14 @@ import java.math.BigDecimal;
  * @date: ${date}
  */
 @Data
-public class ${entity}DTO {
+public class ${entity}DTO implements Serializable {
+
+    private static final long serialVersionUID = #{serialVersionUID}L;
+
 <#-- 循环属性名称 -->
 <#list table.fields as field>
 
     @ApiModelProperty("${field.comment}")
     private ${field.propertyType} ${field.propertyName};
-
 </#list>
 }

@@ -9,6 +9,7 @@ import com.alibaba.fastjson.JSONObject;
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -105,6 +106,12 @@ public class TemplateUtils {
         data.put("author", globalConfig.getAuthor());//创建作者
         data.put("date",  CommonUtils.getFormatTime("yyyy-MM-dd", new Date() ));//创建时间
         data.put("table", tableInfo);//表信息
+
+        String dateStr = new SimpleDateFormat("MMddHHmm").format(new Date());
+        int i = (packagePathConfig.getDtoPath() + StringUtils.capitalize(entity) + "DTO").hashCode();
+
+        long l1 = Long.parseLong( i + dateStr);
+        data.put("serialVersionUID", l1);
         boolean isKeyflag = false;
         for (TableField field:tableInfo.getFields()) {
             if(field.isKeyIdentityFlag()){//获取主键字段信息
