@@ -6,7 +6,7 @@ import ${doPath}.${entity}DO;
 import ${entityPath}.${entity}Entity;
 import org.mapstruct.factory.Mappers;
 import com.wakedata.kangyang.infra.common.BaseConvert;
-/**
+/** 
  * @description:
  * @author: ${author}
  * @date: ${date}
